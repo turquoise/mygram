@@ -5,16 +5,16 @@
     </div>
     <ul class="nav navbar-nav">
       <li ><a routerLinkActive="active" routerLink="/" [routerLinkActiveOptions]="{ exact: true}">Home</a></li>
-      <li ><a routerLinkActive="active" routerLink="/allposts">All Posts</a></li>
-      <li ><a routerLinkActive="active" routerLink="/following">Following</a></li>
-      <li ><a routerLinkActive="active" routerLink="/favorites" >Favourites</a></li>
-      <li ><a routerLinkActive="active" routerLink="/myposts">My Posts</a></li>
+      <li *ngIf="isLoggedIn"><a routerLinkActive="active" routerLink="/allposts">All Posts</a></li>
+      <li *ngIf="isLoggedIn"><a routerLinkActive="active" routerLink="/following">Following</a></li>
+      <li *ngIf="isLoggedIn"><a routerLinkActive="active" routerLink="/favorites" >Favourites</a></li>
+      <li *ngIf="isLoggedIn"><a routerLinkActive="active" routerLink="/myposts">My Posts</a></li>
     </ul>
 
     <ul class="nav navbar-nav navbar-right">
       <li><a routerLinkActive="active" routerLink="/signup">Sign Up</a></li>
       <li><a routerLinkActive="active" routerLink="login">Login</a></li>
-      <li><a >Logout</a></li>
+      <li *ngIf="isLoggedIn"><a >Logout</a></li>
     </ul>
   </div>
 </nav>
