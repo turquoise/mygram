@@ -12,8 +12,11 @@ import { MyPostsComponent } from './my-posts/my-posts.component';
 import { SignUpComponent } from './auth/sign-up/sign-up.component';
 import { LoginComponent } from './auth/login/login.component';
 import { HomeComponent } from './home/home.component';
-import { RouteGuard } from './auth/route-guard';
 import { NotificationComponent } from './notification/notification.component';
+
+import { RouteGuard } from './auth/route-guard';
+import { NotificationService } from './shared/notification.service';
+import { MyfireService } from './shared/myfire.service';
 
 @NgModule({
   declarations: [
@@ -33,7 +36,7 @@ import { NotificationComponent } from './notification/notification.component';
     FormsModule,
     AppRoutingModule
   ],
-  providers: [RouteGuard],
+  providers: [RouteGuard, NotificationService, MyfireService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
