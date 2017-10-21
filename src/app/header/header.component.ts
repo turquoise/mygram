@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import * as firebase from 'firebase';
 import { UserService } from '../shared/user.service';
 
@@ -14,7 +15,10 @@ export class HeaderComponent implements OnInit {
   uid: string;
   email: string;
 
-  constructor(private userService: UserService) { }
+  constructor(
+    private userService: UserService,
+    private router: Router
+  ) { }
 
   ngOnInit() {
     this.userService.statusChange
@@ -40,6 +44,7 @@ export class HeaderComponent implements OnInit {
           this.email = user.email;
           this.uid = user.uid;
         }
+        this.router.navigate(['/myposts']);
       } else {
         this.isLoggedIn = false;
 
