@@ -1,4 +1,4 @@
-import * as fire from 'firebase';
+import * as firebase from 'firebase';
 
 export class MyfireService {
 

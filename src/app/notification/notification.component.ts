@@ -23,7 +23,7 @@ export class NotificationComponent implements OnInit {
     setTimeout( () => {
       this.type = null;
       this.message = null;
-    }, 5000);
+    }, 6000);
   }
 
   ngOnInit() {
