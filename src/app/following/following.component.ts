@@ -38,7 +38,11 @@ export class FollowingComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    
+    _.forEach(this.refArray, ref => {
+      if ( ref && typeof(ref) === 'object') {
+        ref.off();
+      }
+    });
   }
 
 }
