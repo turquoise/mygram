@@ -40,13 +40,13 @@ export class HeaderComponent implements OnInit {
       if (userData && userData.emailVerified) {
         this.isLoggedIn = true;
         const user = this.userService.getProfile();
-        console.log('userData, username ', userData, user.name);
-        if (userData && user.name) {
+        //console.log('userData, username ', userData, user.name);
+        if (user && user.name) {
           this.name = user.name;
           this.email = user.email;
           this.uid = user.uid;
         }
-        this.router.navigate(['/myposts']);
+        this.router.navigate(['/allposts']);
       } else {
         this.isLoggedIn = false;
 
