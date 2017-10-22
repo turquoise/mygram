@@ -80,7 +80,7 @@ export class MyfireService {
     const updates = {};
 
     updates['/images/' + imageData.name + '/oldFavoritesCount'] = imageData.favoriteCount;
-    updates['/images/' + imageData.name + '/favoriteCount'] = imageData.favoriteCount;
+    updates['/images/' + imageData.name + '/favoriteCount'] = imageData.favoriteCount + 1;
     updates['/favorites/' + uid + '/' + imageData.name] = imageData;
     return firebase.database().ref().update(updates);
 
