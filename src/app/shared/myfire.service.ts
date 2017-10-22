@@ -86,4 +86,11 @@ export class MyfireService {
 
   }
 
+  followUser(uploadedByUser) {
+    const uid = firebase.auth().currentUser.uid;
+    const updates = {};
+    updates['/follow/' + uid + '/' + uploadedByUser.uid] = true;
+    return firebase.database().ref().update(updates);
+  }
+
 }
