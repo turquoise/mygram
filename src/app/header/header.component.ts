@@ -23,6 +23,7 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
     this.userService.statusChange
       .subscribe( userData => {
+        //console.log('userData ', userData);
         if (userData) {
           this.name = userData.name;
           this.email = userData.email;
@@ -39,6 +40,7 @@ export class HeaderComponent implements OnInit {
       if (userData && userData.emailVerified) {
         this.isLoggedIn = true;
         const user = this.userService.getProfile();
+        console.log('userData, username ', userData, user.name);
         if (userData && user.name) {
           this.name = user.name;
           this.email = user.email;

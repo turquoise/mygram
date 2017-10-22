@@ -23,7 +23,7 @@ export class MyfireService {
   }
 
   uploadFile(file) {
-    const fileName = this.generateRandomName() + ".jpg";
+    const fileName = this.generateRandomName();
     const fileRef = firebase.storage().ref().child('image/' + fileName);
     const uploadTask = fileRef.put(file);
 
@@ -68,6 +68,10 @@ export class MyfireService {
     updates['/allposts/' + allPostKey] = allPostsDetails;
     updates['/images/' + data.fileName] = imageDetails;
     return firebase.database().ref().update(updates);
+  }
+
+  getUserPostsRef(uid) {
+    return firebase.database().ref('myposts').child(uid);
   }
 
 }
